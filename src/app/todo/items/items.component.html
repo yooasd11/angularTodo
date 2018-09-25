@@ -1,15 +1,12 @@
-<div class="title">
-  <h1>나의 하루</h1>
-  <h2>9월 24일</h2>
-</div>
 <div>
-  <div>
-    <todo-item></todo-item>
-  </div>
-  <div>
-    <todo-item></todo-item>
+  <!-- items component 클래스의 items 멤버를 iteration -->
+  <!-- click event를 바인딩 -->
+  <div *ngFor="let item of items" (click)="toggleDone(item)">
+    <!-- 자식 컴포넌트의 @input 주입 -->
+    <app-todo-item [item]='item'></app-todo-item>
   </div>
 </div>
 <div>
-  <input type="text" placeholder="할 일 추가">
+  <!-- $event : EventEmitter가 전달한 값 -->
+  <app-add-item (onItemAdded)="addItem($event)"></app-add-item>
 </div>

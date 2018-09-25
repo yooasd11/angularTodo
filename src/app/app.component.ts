@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 // import 와 export 키워드는 ES6 에서 제공하는 모듈 시스템 지
 export class AppComponent {
-  title = 'todo';
+  date = '';
+  constructor() {
+    let newDate = new Date();
+    this.date = newDate.getFullYear() + '년 ' + (newDate.getMonth() + 1) + '월 ' + newDate.getDate() + '일'; 
+  }
 }
