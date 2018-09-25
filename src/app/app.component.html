@@ -1,6 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="title">
     <h1>오늘 할일!</h1>
-    <h2>{{ date }}</h2>
+    <!-- pipe 사용해서 date 객체 표현 변화 -->
+    <h2>{{ today | date:'M월 d일' }}</h2>
 </div>
 <app-todo-items></app-todo-items>
