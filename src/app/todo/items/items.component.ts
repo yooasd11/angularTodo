@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Item } from '../share/item.model';
+import { Component, OnDestroy } from '@angular/core';
+import { Item, ITodoState } from '../store';
+import { NgRedux } from '@angular-redux/store';
+import { Actions } from '../actions';
 
 @Component({
   selector: 'app-todo-items',    // '#', '.' 등을 이용해 아이디나 클래스 지정 가능, 지금은 그냥 element
@@ -8,26 +10,31 @@ import { Item } from '../share/item.model';
 })
 
 // 로직을 수행하는 클래스
-export class ItemsComponent implements OnInit {
-  items : Item[];
+export class ItemsComponent implements OnDestroy {
+  items: Item[];
+  subscription;
 
-  constructor() {
-    this.items = [
-      { done: false, text: "공부하기" },
-      { done: false, text: "운동하기" }
-    ]
-   }
-
-  ngOnInit() {
+  constructor(
+    private ngRedux: NgRedux<ITodoState>,
+    private actions: Actions,
+  ) {
+    this.subscription = ngRedux.select<Item[]>('items')
+      .subscribe(newItems => { 
+        this.items = newItems;
+        console.debug("size : ", this.items.length);
+      })
   }
- 
+
   toggleDone(item) {
     item.done = !item.done;
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   addItem(text: string) {
-    this.items.push({
-      done: false, text: text
-    });
+    console.debug("newText : ", text);
+    this.ngRedux.dispatch(this.actions.add({ done: false, text: text }))
   }
 }
