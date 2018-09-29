@@ -17,6 +17,7 @@ export function reducer(lastState: ITodoState, action: TodoAction): ITodoState {
         lastState.items.push(action.payload);
         return { items: lastState.items }
         case Actions.REMOVE:
+        // TODO : NOT IMPLEMENTED YET
         return { items : lastState.items }
     }
     return lastState;
