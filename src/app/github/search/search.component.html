@@ -1,4 +1,9 @@
 <div>
-  <input type="text" placeholder="handle">
-  <button>SEARCH</button>
+  <input type="text" placeholder="handle" [(ngModel)]="handle">
+  <button (click)="search(handle)">SEARCH</button>
 </div>
+<ul>
+  <li *ngFor='let user of users'>
+    hi!!!
+  </li>
+</ul>
