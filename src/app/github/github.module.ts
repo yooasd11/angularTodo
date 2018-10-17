@@ -4,6 +4,7 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http'
 import { HttpService } from './http/http.service';
 import { FormsModule } from '@angular/forms';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule
   ],
 
-  declarations: [SearchComponent],
+  declarations: [SearchComponent, UserComponent],
   providers: [HttpService],
   exports: [SearchComponent]
 })

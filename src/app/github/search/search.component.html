@@ -3,7 +3,7 @@
   <button (click)="search(handle)">SEARCH</button>
 </div>
 <ul>
-  <li *ngFor='let user of users'>
-    hi!!!
-  </li>
+  <div *ngFor='let user of users'>
+    <app-github-user [user]='user'></app-github-user> 
+  </div>
 </ul>
