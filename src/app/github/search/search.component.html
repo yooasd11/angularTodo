@@ -2,8 +2,6 @@
   <input type="text" placeholder="handle" [(ngModel)]="handle">
   <button (click)="search(handle)">SEARCH</button>
 </div>
-<ul>
-  <div *ngFor='let user of users'>
-    <app-github-user [user]='user'></app-github-user> 
-  </div>
-</ul>
+<div *ngFor='let user of users'>
+  <app-github-user [user]='user'></app-github-user> 
+</div>

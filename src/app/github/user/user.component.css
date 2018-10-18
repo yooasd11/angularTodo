@@ -1,0 +1,15 @@
+div {
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 10px;
+}
+
+div h3 {
+    margin: 0;
+}
+
+div img {
+    height: 48px;
+    width: 48px;
+    margin-right: 10px;
+}

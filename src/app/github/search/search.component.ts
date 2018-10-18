@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../http/http.service'
+import { HttpService } from '../http/http.service';
+import { User } from '../search/response'
+import { SearchResponse } from './response';
 
 @Component({
   selector: 'app-search',
@@ -9,7 +11,7 @@ import { HttpService } from '../http/http.service'
 export class SearchComponent implements OnInit {
   result;
   handle: string;
-  users: string[];
+  users: User[] = [];
 
   constructor(private httpService: HttpService) { }
 
@@ -18,9 +20,10 @@ export class SearchComponent implements OnInit {
 
   search(handle: string) {
     this.httpService.getUser(handle).subscribe(
-      response => {
+      (response: SearchResponse) => {
         console.debug("sucess : ", response);
         this.result = response;
+        this.users = response.items;
       },
       error => {
         console.error("error : ", error);

@@ -13,3 +13,14 @@ h1, h2 {
 h1 {
     margin-bottom: 16px;
 }
+
+.routers {
+    background-color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+}
+.routers a {
+    padding-left: 20px;
+    padding-right: 20px;
+}
