@@ -5,8 +5,8 @@ import { ItemComponent } from './items/item/item.component';
 import { FormsModule } from '@angular/forms';
 import { AddItemComponent } from './items/add-item/add-item.component'
 import { NgReduxModule, NgRedux } from '@angular-redux/store'
-import { reducer, ITodoState, INITIAL_STATE } from './store'
-import { Actions } from './actions'
+import { reducer, IState, INITIAL_STATE } from '../store'
+import { Actions } from '../actions'
 
 @NgModule({
   imports: [
@@ -19,10 +19,10 @@ import { Actions } from './actions'
   exports: [ItemsComponent]     // 외부에서도 사용하도록
 })
 export class TodoModule {
-  constructor(ngRedux: NgRedux<ITodoState>) {
+  constructor(ngRedux: NgRedux<IState>) {
     ngRedux.configureStore(
       reducer,
       INITIAL_STATE
-    )
+    );
   }
  }

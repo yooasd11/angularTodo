@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Item, ITodoState } from '../store';
+import { Item, IState } from '../../store';
 import { NgRedux } from '@angular-redux/store';
-import { Actions } from '../actions';
+import { Actions } from '../../actions';
 
 @Component({
   selector: 'app-todo-items',    // '#', '.' 등을 이용해 아이디나 클래스 지정 가능, 지금은 그냥 element
@@ -15,7 +15,7 @@ export class ItemsComponent implements OnDestroy {
   subscription;
 
   constructor(
-    private ngRedux: NgRedux<ITodoState>,
+    private ngRedux: NgRedux<IState>,
     private actions: Actions,
   ) {
     this.subscription = ngRedux.select<Item[]>('items')

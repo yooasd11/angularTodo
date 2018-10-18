@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../search/response';
+import { User } from '../../store';
 
 @Component({
   selector: 'app-github-user',

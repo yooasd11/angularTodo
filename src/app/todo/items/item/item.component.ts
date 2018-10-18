@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Item } from '../../store';
+import { Item } from '../../../store';
 
 // inline-template / style 옵션으로 작성됨!!
 @Component({
