@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   today: Date = new Date();
   constructor() {
-  } 
+  }
 }

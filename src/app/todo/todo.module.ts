@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { ItemsComponent } from './items/items.component';
 import { ItemComponent } from './items/item/item.component';
 import { FormsModule } from '@angular/forms';
-import { AddItemComponent } from './items/add-item/add-item.component'
-import { NgReduxModule, NgRedux } from '@angular-redux/store'
-import { reducer, IState, INITIAL_STATE } from '../store'
-import { Actions } from '../actions'
+import { AddItemComponent } from './items/add-item/add-item.component';
+import { NgReduxModule, NgRedux } from '@angular-redux/store';
+import { reducer, IState, INITIAL_STATE } from '../store';
+import { Actions } from '../actions';
 
 @NgModule({
   imports: [
